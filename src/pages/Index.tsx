@@ -1,8 +1,16 @@
 
 import Navbar from "@/components/Navbar";
 import { Sparkles } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
+  const navigate = useNavigate();
+
+  const handleStartStudy = () => {
+    // Navigate to study page or auth page
+    navigate("/study");
+  };
+
   return (
     <div className="min-h-screen bg-dark">
       <div className="purple-gradient absolute inset-0" />
@@ -17,7 +25,7 @@ const Index = () => {
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
             Your College Notes,<br />
-            Supercharged by AI
+            At Your Fingertips
           </h1>
           
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
@@ -26,8 +34,8 @@ const Index = () => {
           </p>
           
           <div className="flex items-center justify-center space-x-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
-            <button className="button-primary">
-              Get Started
+            <button className="button-primary" onClick={handleStartStudy}>
+              Start Study
             </button>
             <button className="button-secondary">
               Learn More
