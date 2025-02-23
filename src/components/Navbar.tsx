@@ -9,9 +9,6 @@ const Navbar = () => {
           NexusNotes
         </Link>
         <div className="flex items-center space-x-8">
-          <Link to="/features" className="text-white/80 hover:text-white transition-colors">
-            Features
-          </Link>
           <Link to="/about" className="text-white/80 hover:text-white transition-colors">
             About
           </Link>
