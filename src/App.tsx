@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Study from "./pages/Study";
+import Subjects from "./pages/Subjects";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
 
@@ -25,6 +26,7 @@ const App = () => (
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
               <Route path="/study" element={<Study />} />
+              <Route path="/subjects/:stream/:semester" element={<Subjects />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

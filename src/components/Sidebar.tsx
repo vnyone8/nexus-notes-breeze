@@ -4,17 +4,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={`fixed top-0 left-0 h-screen bg-dark-lighter transition-all duration-300 ${isOpen ? 'w-64' : 'w-16'}`}>
-      <button 
-        onClick={() => setIsOpen(!isOpen)} 
-        className="absolute right-[-12px] top-6 bg-primary rounded-full p-1 hover:bg-primary-hover"
-      >
-        <Menu className="w-4 h-4 text-white" />
-      </button>
-      
       <div className="p-4 mt-4">
         {isOpen && (
           <div className="relative mb-6">
