@@ -1,5 +1,6 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 const streamData = {
   cse: {
@@ -29,27 +30,44 @@ const streamData = {
 };
 
 const Study = () => {
+  const navigate = useNavigate();
+
+  const handleSemesterClick = (stream: string, semester: number) => {
+    navigate(`/subjects/${stream}/${semester}`);
+  };
+
   return (
     <div className="min-h-screen bg-dark pt-20 px-6">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-bold mb-12 text-center">Choose Your Stream</h1>
+        <div className="flex items-center gap-4 mb-12">
+          <Link 
+            to="/" 
+            className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+          >
+            <ArrowLeft className="w-5 h-5" />
+            Back to Home
+          </Link>
+        </div>
+
+        <h1 className="text-4xl font-bold mb-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-purple-600">
+          Choose Your Stream
+        </h1>
         
         <div className="grid md:grid-cols-2 gap-8">
           {Object.entries(streamData).map(([key, stream]) => (
-            <div key={key} className="glass-card rounded-xl p-6">
-              <h2 className="text-2xl font-bold mb-6">{stream.name}</h2>
-              <div className="grid grid-cols-2 gap-4">
+            <div key={key} className="glass-card rounded-xl p-8 backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5">
+              <h2 className="text-3xl font-bold mb-8 text-center">{stream.name}</h2>
+              <div className="grid grid-cols-2 gap-6">
                 {stream.semesters.map((semester) => (
-                  <div key={semester} className="bg-white/5 rounded-lg p-4">
-                    <h3 className="text-lg font-semibold mb-3">Semester {semester}</h3>
-                    <ul className="space-y-2">
-                      {stream.subjects[semester].map((subject) => (
-                        <li key={subject} className="text-sm text-white/80 hover:text-white cursor-pointer">
-                          {subject}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                  <button
+                    key={semester}
+                    onClick={() => handleSemesterClick(key, semester)}
+                    className="p-6 rounded-xl bg-gradient-to-br from-primary/20 to-primary/5 hover:from-primary/30 hover:to-primary/10 border border-white/10 transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
+                  >
+                    <h3 className="text-xl font-semibold">
+                      Semester {semester}
+                    </h3>
+                  </button>
                 ))}
               </div>
             </div>
