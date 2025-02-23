@@ -10,6 +10,7 @@ import Study from "./pages/Study";
 import Subjects from "./pages/Subjects";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
         <div className="flex min-h-screen">
           <Sidebar />
           <div className="flex-1 ml-16">
+            <Navbar />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
