@@ -30,9 +30,10 @@ const streamData = {
 const Subjects = () => {
   const { stream, semester } = useParams();
   const streamInfo = stream && streamData[stream as keyof typeof streamData];
-  const semesterSubjects = streamInfo?.subjects[semester as keyof typeof streamInfo.subjects];
+  const semesterNumber = semester ? parseInt(semester) as 1 | 2 | 3 | 4 | 5 | 6 : null;
+  const semesterSubjects = streamInfo?.subjects[semesterNumber!];
 
-  if (!streamInfo || !semesterSubjects) {
+  if (!streamInfo || !semesterNumber || !semesterSubjects) {
     return <div>Invalid stream or semester</div>;
   }
 
@@ -50,7 +51,7 @@ const Subjects = () => {
         </div>
 
         <h1 className="text-4xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-purple-600">
-          {streamInfo.name} - Semester {semester}
+          {streamInfo.name} - Semester {semesterNumber}
         </h1>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
