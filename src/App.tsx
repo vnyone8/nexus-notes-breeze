@@ -20,17 +20,19 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen bg-dark">
           <Sidebar />
           <div className="flex-1 ml-16">
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/study" element={<Study />} />
-              <Route path="/subjects/:stream/:semester" element={<Subjects />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+            <main className="pt-16">
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/study" element={<Study />} />
+                <Route path="/subjects/:stream/:semester" element={<Subjects />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </main>
           </div>
         </div>
       </BrowserRouter>
