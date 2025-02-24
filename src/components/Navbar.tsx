@@ -1,8 +1,14 @@
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Menu } from "lucide-react";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
+  const handleStartStudy = () => {
+    navigate("/study");
+  };
+
   return (
     <nav className="fixed w-full top-0 z-50 px-6 py-4 bg-dark">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -21,7 +27,7 @@ const Navbar = () => {
           <Link to="/about" className="text-white/80 hover:text-white transition-colors">
             About
           </Link>
-          <button className="button-primary">
+          <button className="button-primary" onClick={handleStartStudy}>
             Start Study
           </button>
         </div>
