@@ -29,8 +29,8 @@ const Index = () => {
           </h1>
           
           <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
-            Upload, organize, and access your college notes with powerful AI features.
-            Search smarter, learn faster, and collaborate with your peers.
+            Upload, organize, and access your college notes.
+            Search smarter and collaborate with your peers.
           </p>
           
           <div className="flex items-center justify-center space-x-4 animate-fade-up" style={{ animationDelay: "0.5s" }}>
