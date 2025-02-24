@@ -22,7 +22,7 @@ const App = () => (
       <BrowserRouter>
         <div className="flex min-h-screen bg-dark">
           <Sidebar />
-          <div className="flex-1 ml-16">
+          <div className="flex-1">
             <Navbar />
             <main className="pt-16">
               <Routes>
