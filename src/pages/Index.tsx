@@ -23,7 +23,7 @@ const Index = () => {
             
             <h1 style={{
             animationDelay: "0.3s"
-          }} className="text-8xl md:text-7xl font-bold mb-6 animate-fade-up">
+          }} className="text-8xl font-bold mb-6 animate-fade-up md:text-8xl">
               Your College Notes,<br />
               At Your Fingertips
             </h1>
