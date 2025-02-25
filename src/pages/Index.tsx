@@ -38,7 +38,7 @@ const Index = () => {
             <div className="flex items-center justify-center animate-fade-up" style={{
             animationDelay: "0.5s"
           }}>
-              <button className="button-primary" onClick={handleStartStudy}>
+              <button onClick={handleStartStudy} className="button-primary font-normal text-base px-[40px]">
                 Start Study
               </button>
             </div>
