@@ -1,17 +1,12 @@
-
 import Navbar from "@/components/Navbar";
 import { Sparkles, Search, Upload, Users } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-
 const Index = () => {
   const navigate = useNavigate();
-
   const handleStartStudy = () => {
     navigate("/study");
   };
-
-  return (
-    <div className="min-h-screen bg-dark">
+  return <div className="min-h-screen bg-dark">
       <div className="purple-gradient absolute inset-0" />
       <Navbar />
       
@@ -19,22 +14,30 @@ const Index = () => {
         {/* Hero Section */}
         <div className="min-h-screen flex items-center justify-center px-6">
           <div className="max-w-7xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 bg-white/5 px-4 py-2 rounded-full mb-8 animate-fade-up" style={{ animationDelay: "0.2s" }}>
+            <div style={{
+            animationDelay: "0.2s"
+          }} className="inline-flex items-center space-x-2 bg-white/5px-4py-2 rounded-full mb-8 animate-fade-up">
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium">Built for college students</span>
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-up" style={{ animationDelay: "0.3s" }}>
+            <h1 style={{
+            animationDelay: "0.3s"
+          }} className="text-8xl md:text-7xl font-bold mb-6 animate-fade-up">
               Your College Notes,<br />
               At Your Fingertips
             </h1>
             
-            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 animate-fade-up" style={{ animationDelay: "0.4s" }}>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto mb-12 animate-fade-up" style={{
+            animationDelay: "0.4s"
+          }}>
               Upload, organize, and access your college notes.
               Search smarter and collaborate with your peers.
             </p>
             
-            <div className="flex items-center justify-center animate-fade-up" style={{ animationDelay: "0.5s" }}>
+            <div className="flex items-center justify-center animate-fade-up" style={{
+            animationDelay: "0.5s"
+          }}>
               <button className="button-primary" onClick={handleStartStudy}>
                 Start Study
               </button>
@@ -62,7 +65,9 @@ const Index = () => {
               </div>
 
               {/* Easy Upload Feature */}
-              <div className="glass-card p-8 rounded-xl text-center animate-fade-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: "0.2s" }}>
+              <div className="glass-card p-8 rounded-xl text-center animate-fade-up hover:scale-105 transition-transform duration-300" style={{
+              animationDelay: "0.2s"
+            }}>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Upload className="w-8 h-8 text-primary" />
                 </div>
@@ -73,7 +78,9 @@ const Index = () => {
               </div>
 
               {/* Collaboration Feature */}
-              <div className="glass-card p-8 rounded-xl text-center animate-fade-up hover:scale-105 transition-transform duration-300" style={{ animationDelay: "0.3s" }}>
+              <div className="glass-card p-8 rounded-xl text-center animate-fade-up hover:scale-105 transition-transform duration-300" style={{
+              animationDelay: "0.3s"
+            }}>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="w-8 h-8 text-primary" />
                 </div>
@@ -86,8 +93,6 @@ const Index = () => {
           </div>
         </div>
       </main>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
