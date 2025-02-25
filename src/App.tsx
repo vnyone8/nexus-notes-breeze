@@ -20,20 +20,18 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="flex min-h-screen bg-dark">
+        <div className="min-h-screen bg-dark">
+          <Navbar />
           <Sidebar />
-          <div className="flex-1">
-            <Navbar />
-            <main className="pt-16">
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/study" element={<Study />} />
-                <Route path="/subjects/:stream/:semester" element={<Subjects />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </main>
-          </div>
+          <main className="pt-16 transition-all duration-300">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/study" element={<Study />} />
+              <Route path="/subjects/:stream/:semester" element={<Subjects />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
         </div>
       </BrowserRouter>
     </TooltipProvider>

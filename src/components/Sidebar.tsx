@@ -23,26 +23,25 @@ const Sidebar = () => {
   ];
 
   return (
-    <div 
-      className={`fixed top-0 left-0 h-screen bg-dark-lighter transition-all duration-300 z-40 pt-16 ${
-        isOpen ? 'w-64' : 'w-0'
-      }`}
+    <aside 
+      className={`fixed top-16 left-0 h-[calc(100vh-4rem)] bg-dark-lighter transition-all duration-300 z-40 
+        ${isOpen ? 'w-64' : 'w-0'} border-r border-white/10`}
     >
       <div className="flex flex-col h-full">
-        <div className="flex-1 p-4">
-          <nav className="space-y-6">
+        <div className="flex-1 py-4">
+          <nav className="px-2 space-y-2">
             <TooltipProvider>
               {sidebarItems.map(({ icon: Icon, label, path }) => (
                 <Tooltip key={label}>
                   <TooltipTrigger asChild>
                     <Link
                       to={path}
-                      className={`flex items-center space-x-3 text-white/80 hover:text-white hover:bg-white/5 p-3 rounded-lg transition-all duration-300 ${
-                        !isOpen ? 'opacity-0' : 'opacity-100'
+                      className={`flex items-center gap-3 text-white/80 hover:text-white hover:bg-white/5 p-3 rounded-lg transition-all duration-300 ${
+                        !isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'
                       }`}
                     >
-                      <Icon className="w-6 h-6 min-w-[24px]" />
-                      <span className="text-sm font-medium">{label}</span>
+                      <Icon className="w-5 h-5 min-w-[20px]" />
+                      <span className="text-sm font-medium whitespace-nowrap">{label}</span>
                     </Link>
                   </TooltipTrigger>
                   {!isOpen && (
@@ -56,7 +55,7 @@ const Sidebar = () => {
           </nav>
         </div>
       </div>
-    </div>
+    </aside>
   );
 };
 
