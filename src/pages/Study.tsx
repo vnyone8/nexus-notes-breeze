@@ -3,7 +3,22 @@ import { Link, useNavigate } from "react-router-dom";
 import { ArrowLeft, Search, BookOpen, Award, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 
-const streamData = {
+interface Subject {
+  [semester: number]: string[] | { [cycle: string]: string[] };
+}
+
+interface StreamData {
+  name: string;
+  description: string;
+  semesters: number[];
+  subjects: Subject;
+}
+
+interface StreamDataMap {
+  [key: string]: StreamData;
+}
+
+const streamData: StreamDataMap = {
   cse: {
     name: "CSE STREAM",
     description: "Computer Science & Engineering covers programming fundamentals, algorithms, data structures, web development, and advanced computing concepts. Ideal for students interested in software development, artificial intelligence, and computer systems.",
@@ -89,15 +104,15 @@ const Study = () => {
       if (stream.name.toLowerCase().includes(searchQuery.toLowerCase())) return true;
       
       // Check if any subject matches
-      return Object.values(stream.subjects).some(semesterSubjects => {
+      return Object.entries(stream.subjects).some(([_, semesterSubjects]) => {
         if (Array.isArray(semesterSubjects)) {
           return semesterSubjects.some(subject => 
             subject.toLowerCase().includes(searchQuery.toLowerCase())
           );
         } else {
-          // Handle first semester's cycle structure
-          return Object.values(semesterSubjects).some(cycleSubjects => 
-            cycleSubjects.some((subject: string) => 
+          // Handle case when it's an object with cycle structure
+          return Object.values(semesterSubjects as Record<string, string[]>).some(cycleSubjects => 
+            cycleSubjects.some(subject => 
               subject.toLowerCase().includes(searchQuery.toLowerCase())
             )
           );
