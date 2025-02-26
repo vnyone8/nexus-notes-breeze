@@ -7,12 +7,16 @@
 
 @layer base {
   body {
-    @apply bg-dark text-white font-['Inter'] antialiased;
+    @apply bg-dark text-white font-['Inter'] antialiased overflow-x-hidden;
+  }
+
+  * {
+    @apply transition-colors;
   }
 }
 
 .glass-card {
-  @apply backdrop-blur-lg bg-white/5 border border-white/10;
+  @apply backdrop-blur-lg bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/8 transition-all duration-300;
 }
 
 .button-primary {
@@ -25,4 +29,139 @@
 
 .purple-gradient {
   background: radial-gradient(circle at center, rgba(124, 58, 237, 0.15) 0%, rgba(124, 58, 237, 0) 70%);
+  animation: pulse 8s ease-in-out infinite alternate;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-white via-primary to-white bg-clip-text text-transparent;
+}
+
+/* Start Study Button Styles */
+.start-study-button {
+  background: linear-gradient(90deg, #7C3AED 0%, #8B5CF6 100%);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  transition: all 0.3s ease;
+}
+
+.start-study-button:hover {
+  box-shadow: 0 0 25px rgba(124, 58, 237, 0.7);
+}
+
+/* Shadow glow effect */
+.shadow-glow {
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+}
+
+.shadow-glow:hover {
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+}
+
+/* Animated background particles */
+.animated-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.15);
+  pointer-events: none;
+}
+
+.particle:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  left: 10%;
+  top: 20%;
+  animation: float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  right: 15%;
+  top: 30%;
+  animation: float 18s infinite ease-in-out reverse;
+}
+
+.particle:nth-child(3) {
+  width: 80px;
+  height: 80px;
+  left: 20%;
+  bottom: 20%;
+  animation: float 12s infinite ease-in-out 1s;
+}
+
+.particle:nth-child(4) {
+  width: 60px;
+  height: 60px;
+  right: 25%;
+  bottom: 15%;
+  animation: float 20s infinite ease-in-out 2s;
+}
+
+.particle:nth-child(5) {
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  top: 50%;
+  animation: float 25s infinite ease-in-out 0.5s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-30px, 30px);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+  75% {
+    transform: translate(30px, 40px);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
 }
