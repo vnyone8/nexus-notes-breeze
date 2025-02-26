@@ -14,7 +14,7 @@ interface CTAProps {
   action: {
     text: string
     href: string
-    variant?: "default" | "glow"
+    variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link"
   }
   withGlow?: boolean
   className?: string
@@ -57,7 +57,10 @@ export function CTASection({
         <Button
           variant={action.variant || "default"}
           size="lg"
-          className="opacity-0 animate-fade-in-up delay-500"
+          className={cn(
+            "opacity-0 animate-fade-in-up delay-500",
+            action.variant === "default" && withGlow && "shadow-glow"
+          )}
           asChild
         >
           <a href={action.href}>{action.text}</a>
