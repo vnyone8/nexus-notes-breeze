@@ -1,14 +1,10 @@
 
-import { CTASection } from "@/components/blocks/cta-with-rectangle"
+import { CTASection } from "@/components/blocks/cta-with-glow"
 
 export function CTADemo() {
   return (
     <CTASection
-      badge={{
-        text: "Get started"
-      }}
-      title="Start building with Launch UI"
-      description="Get started with Launch UI and build your landing page in no time"
+      title="Start building today"
       action={{
         text: "Get Started",
         href: "/docs",

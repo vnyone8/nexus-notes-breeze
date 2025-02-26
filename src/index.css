@@ -54,6 +54,18 @@
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
   }
+  
+  /* Hover effect for group */
+  .group:hover .group-hover\:translate-y-\[-2rem\] {
+    --tw-translate-y: -2rem;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate))
+      skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+      scaleY(var(--tw-scale-y));
+  }
+  
+  .group:hover .group-hover\:opacity-100 {
+    opacity: 1;
+  }
 }
 
 .glass-card {
