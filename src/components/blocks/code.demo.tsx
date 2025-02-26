@@ -1,15 +1,6 @@
 
-import { CTASection } from "@/components/blocks/cta-with-glow"
+import { BackgroundPaths } from "@/components/ui/background-paths"
 
-export function CTADemo() {
-  return (
-    <CTASection
-      title="Start building today"
-      action={{
-        text: "Get Started",
-        href: "/docs",
-        variant: "default"
-      }}
-    />
-  )
+export function DemoBackgroundPaths() {
+    return <BackgroundPaths title="Background Paths" />
 }
