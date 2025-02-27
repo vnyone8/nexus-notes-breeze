@@ -3,7 +3,6 @@ import Navbar from "@/components/Navbar";
 import { Sparkles, Search, Upload, Users, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { BackgroundPaths } from "@/components/ui/background-paths";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -30,16 +29,20 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark relative">
-      {/* Background Paths */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <BackgroundPaths title="Nexus Notes" />
+    <div className="min-h-screen bg-dark">
+      {/* Animated background particles */}
+      <div className="animated-background">
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
+        <div className="particle"></div>
       </div>
       
-      <div className="purple-gradient absolute inset-0 z-0 opacity-50" />
+      <div className="purple-gradient absolute inset-0" />
       <Navbar />
       
-      <main className="relative z-10">
+      <main className="relative">
         {/* Hero Section */}
         <section 
           aria-label="College Notes Hero Section"

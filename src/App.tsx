@@ -11,6 +11,7 @@ import Features from "./pages/Features";
 import Subjects from "./pages/Subjects";
 import NotFound from "./pages/NotFound";
 import Sidebar from "./components/Sidebar";
+import Navbar from "./components/Navbar";
 
 const queryClient = new QueryClient();
 
@@ -21,8 +22,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <div className="min-h-screen bg-dark">
+          <Navbar />
           <Sidebar />
-          <main className="transition-all duration-300">
+          <main className="pt-16 transition-all duration-300">
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />
