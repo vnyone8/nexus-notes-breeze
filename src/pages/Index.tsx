@@ -30,14 +30,19 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-dark">
-      {/* Animated background paths */}
+    <div className="min-h-screen bg-dark relative">
+      {/* Animated background paths - place it first for proper layering */}
       <BackgroundPaths />
       
-      <div className="purple-gradient absolute inset-0" />
-      <Navbar />
+      {/* Purple gradient */}
+      <div className="purple-gradient absolute inset-0 z-[1]" />
       
-      <main className="relative">
+      {/* Navbar with higher z-index */}
+      <div className="relative z-10">
+        <Navbar />
+      </div>
+      
+      <main className="relative z-10">
         {/* Hero Section */}
         <section 
           aria-label="College Notes Hero Section"
