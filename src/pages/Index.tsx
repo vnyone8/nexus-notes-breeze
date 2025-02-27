@@ -31,10 +31,12 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-dark relative">
-      {/* Animated background paths - place it first for proper layering */}
-      <BackgroundPaths />
+      {/* Animated background paths with higher z-index than gradient but lower than content */}
+      <div className="fixed inset-0 z-[2] transform-gpu">
+        <BackgroundPaths />
+      </div>
       
-      {/* Purple gradient */}
+      {/* Purple gradient with lower z-index */}
       <div className="purple-gradient absolute inset-0 z-[1]" />
       
       {/* Navbar with higher z-index */}
