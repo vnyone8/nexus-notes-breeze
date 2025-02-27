@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import { Sparkles, Search, Upload, Users, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { BackgroundPaths } from "@/components/ui/background-paths";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -30,14 +31,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-dark">
-      {/* Animated background particles */}
-      <div className="animated-background">
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-        <div className="particle"></div>
-      </div>
+      {/* Animated background paths */}
+      <BackgroundPaths />
       
       <div className="purple-gradient absolute inset-0" />
       <Navbar />
