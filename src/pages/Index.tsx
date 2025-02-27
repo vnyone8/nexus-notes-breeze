@@ -31,9 +31,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-dark relative">
-      {/* Background Paths */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <BackgroundPaths title="Nexus Notes" />
+      {/* Background Paths - positioned with lower opacity and pushed back */}
+      <div className="absolute inset-0 z-0 pointer-events-none opacity-30">
+        <div className="scale-150 translate-y-20">
+          <BackgroundPaths title="Nexus Notes" />
+        </div>
       </div>
       
       <div className="purple-gradient absolute inset-0 z-0 opacity-50" />
