@@ -21,7 +21,7 @@ const Navbar = () => {
             <Menu className="w-6 h-6 text-white" aria-hidden="true" />
           </button>
           <Link to="/" className="text-2xl md:text-3xl font-bold text-white animate-fade-in hover:text-gradient transition-all duration-300">
-            NexusNotes
+            NoteCraft
           </Link>
         </div>
         <div className="flex items-center gap-2 md:gap-6">

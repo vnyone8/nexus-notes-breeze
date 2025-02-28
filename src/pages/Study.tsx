@@ -154,7 +154,7 @@ const Study = () => {
         
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           {getFilteredStreams().map(([key, stream]) => (
-            <div key={key} className="glass-card rounded-xl p-8 backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5">
+            <div key={key} className="glass-card rounded-xl p-8 backdrop-blur-xl bg-gradient-to-br from-white/10 to-white/5 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-primary/20">
               <h2 className="text-3xl font-bold mb-4 text-center">{stream.name}</h2>
               
               {/* Stream description */}
@@ -231,7 +231,7 @@ const Study = () => {
           
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="glass-card rounded-xl p-6 hover:scale-105 transition-all duration-300">
+              <div key={index} className="glass-card rounded-xl p-6 hover:scale-105 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-xl hover:shadow-primary/20">
                 <div className="flex items-start gap-4">
                   <div className="h-10 w-10 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
                     {testimonial.avatar}

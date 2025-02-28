@@ -101,7 +101,7 @@ const Index = () => {
         {/* Features Section */}
         <section 
           id="features-section"
-          aria-label="NexusNotes Features"
+          aria-label="NoteCraft Features"
           className="min-h-screen flex items-center bg-dark-lighter relative px-6"
         >
           <div className="max-w-7xl mx-auto py-24">
