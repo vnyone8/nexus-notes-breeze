@@ -20,8 +20,10 @@ const Navbar = () => {
           >
             <Menu className="w-6 h-6 text-white" aria-hidden="true" />
           </button>
-          <Link to="/" className="text-2xl md:text-3xl font-bold text-white animate-fade-in hover:text-gradient transition-all duration-300">
-            PurpleNotes
+          <Link to="/" className="text-2xl md:text-3xl font-bold animate-fade-in transition-all duration-300">
+            <span className="bg-gradient-to-r from-[#9b87f5] via-[#8B5CF6] to-[#E5DEFF] bg-clip-text text-transparent hover:drop-shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-300">
+              PurpleNotes
+            </span>
           </Link>
         </div>
         <div className="flex items-center gap-2 md:gap-6">
