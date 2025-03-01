@@ -1,6 +1,6 @@
 
 import { Link, useNavigate } from "react-router-dom";
-import { Menu } from "lucide-react";
+import { Menu, Notebook } from "lucide-react";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -20,10 +20,17 @@ const Navbar = () => {
           >
             <Menu className="w-6 h-6 text-white" aria-hidden="true" />
           </button>
-          <Link to="/" className="text-2xl md:text-3xl font-bold animate-fade-in transition-all duration-300">
-            <span className="bg-gradient-to-r from-[#4b0082]/80 via-[#8a2be2]/80 to-[#e0b0ff]/80 bg-clip-text text-transparent hover:drop-shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-300">
-              PurpleNotes
+          <Link to="/" className="flex items-center gap-1 text-2xl md:text-3xl font-bold animate-fade-in transition-all duration-300 group">
+            <span className="relative">
+              <Notebook className="w-6 h-6 text-[#8a2be2]/90 absolute -left-1 -top-1 transform scale-90 opacity-80 group-hover:opacity-100 transition-all duration-300" />
+              <span className="bg-gradient-to-r from-[#4b0082]/80 via-[#8a2be2]/80 to-[#e0b0ff]/80 bg-clip-text text-transparent 
+                hover:drop-shadow-[0_0_10px_rgba(139,92,246,0.5)] transition-all duration-300 relative z-10 pl-5">
+                <span className="font-light">Purple</span><span className="font-bold">Notes</span>
+              </span>
+              <span className="h-[2px] w-0 bg-gradient-to-r from-[#8a2be2]/50 to-[#e0b0ff]/50 absolute bottom-0 left-6 
+                group-hover:w-[calc(100%-24px)] transition-all duration-500"></span>
             </span>
+            <span className="text-xs text-white/70 font-normal mt-auto mb-1 hidden sm:block">Study Smarter</span>
           </Link>
         </div>
         <div className="flex items-center gap-2 md:gap-6">
