@@ -21,7 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <div className="min-h-screen bg-dark">
+        <div className="min-h-screen bg-background">
           <Navbar />
           <Sidebar />
           <main className="pt-16 transition-all duration-300">
